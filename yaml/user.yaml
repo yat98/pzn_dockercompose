@@ -1,0 +1,16 @@
+firstname: Hidayat
+lastname: "Chandra"
+
+hobbies:
+  - Coding
+  - Reading
+address:
+  street: Jl. John Doe
+  city: Gorontalo
+  province: Gorontalo
+  country: Indonesia
+wallet:
+  - type: cash
+    amount: 10000
+  - type: debit
+    amount: 5000000
