@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  mongodb1:
+    container_name: mongodb1
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - "mongo-data1:/data/db"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: 'yat'
+      MONGO_INITDB_ROOT_PASSWORD: 'yat'
+      MONGO_INITDB_DATABASE: 'admin'
+  mongodb2:
+    container_name: mongodb2
+    image: mongo:latest
+    ports:
+      - "27018:27017"
+    volumes:
+      - type: volume
+        source: "mongo-data2"
+        target: "/data/db"
+        read_only: false
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: 'yat'
+      MONGO_INITDB_ROOT_PASSWORD: 'yat'
+      MONGO_INITDB_DATABASE: 'admin'
+
+volumes:
+  mongo-data1:
+    name: mongo-data1
+  mongo-data2:
+    name: mongo-data2
