@@ -18,6 +18,7 @@ services:
     container_name: mongodb-express-example
     ports:
       - "8081:8081"
+    restart: always
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: 'yat'
       ME_CONFIG_MONGODB_ADMINPASSWORD: 'yat'
